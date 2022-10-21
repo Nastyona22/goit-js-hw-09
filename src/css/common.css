@@ -16,3 +16,14 @@ img {
   display: block;
   max-width: 100%;
 }
+
+button{
+    margin: 16px;
+    padding: 16px;
+    font-size: 16px;
+}
+
+.color-switcher{
+  text-align: center;
+  align-items: center;
+}
