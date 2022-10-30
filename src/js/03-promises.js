@@ -15,9 +15,7 @@ const actPromise = event => {
   } = event.currentTarget;
  
  
-
-
-  for (i = 0; i < amount.value; i += 1) {
+  for (let i = 0; i < amount.value; i += 1) {
     numberOfPosition += 1;
     delayForNotify = delay.value + step.value *i;
     
