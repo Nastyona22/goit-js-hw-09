@@ -4,7 +4,7 @@ const formRef = document.querySelector('.form');
 
 
 let numberOfPosition=0;
-let delayForNotify = 0;
+
 
 
 
@@ -17,13 +17,8 @@ const actPromise = event => {
  
   for (let i = 0; i < amount.value; i += 1) {
     numberOfPosition += 1;
-    delayForNotify = delay.value + step.value *i;
+    const delayForNotify = Number(delay.value) + Number(step.value *i);
     
-  
-    console.log(delayForNotify);
-
-    
-
     function createPromise(numberOfPosition, delayForNotify) {
   
     const shouldResolve = Math.random() > 0.3;
@@ -38,7 +33,7 @@ const actPromise = event => {
       });
     };
 
-createPromise(numberOfPosition, delay)
+createPromise(numberOfPosition, delayForNotify)
   .then(result => Notify.success(result))
   .catch(result => Notify.failure(result));
     
@@ -48,7 +43,6 @@ createPromise(numberOfPosition, delay)
 }
   
 
-  
   
 formRef.addEventListener('submit', actPromise);
 
