@@ -6,6 +6,8 @@ const timePickerRef = document.querySelector('#datetime-picker');
 const btnStartRef = document.querySelector("button");
 const timerItems = document.querySelector('.timer');
 let chosenDate = null; 
+let delta = null;
+
 
 timePickerRef.style.fontSize = "large";
 btnStartRef.disabled = true;
