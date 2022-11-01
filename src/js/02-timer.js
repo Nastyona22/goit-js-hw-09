@@ -21,11 +21,11 @@ const options = {
         delta = selectedDates[0].getTime() - Date.now();
         
        if (delta <= 0) {
-        Notify.failure('Вибраний час в минулому, виберіть дату в майбутньому!');
+        Notify.failure('Please choose a date in the future');
         return;
         }
         btnStartRef.disabled = false;
-        Notify.success('Тисни "Start" та починай відлік!');
+        Notify.success('Press "Start" for countdown beginning!');
         chosenDate = selectedDates[0];
     },
 };
@@ -49,7 +49,7 @@ const timer = {
 
       if (diff <= 1000) {
         clearInterval(this.intervalId);
-        Notify.success('Дедлайн настав!');
+        Notify.success('The deadline has arrived');
       }
 
       const data = this.convertMs(diff);

@@ -3,19 +3,21 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const formRef = document.querySelector('.form');
 
 
-let numberOfPosition=0;
+// let numberOfPosition=0;
 
 
 
 
 const actPromise = event => {
   event.preventDefault();
+  let numberOfPosition=0;
 
   const { elements: { delay, step, amount },
   } = event.currentTarget;
  
  
   for (let i = 0; i < amount.value; i += 1) {
+    
     numberOfPosition += 1;
     const delayForNotify = Number(delay.value) + Number(step.value *i);
     
@@ -42,8 +44,7 @@ createPromise(numberOfPosition, delayForNotify)
 
 }
   
-
-  
+ 
 formRef.addEventListener('submit', actPromise);
 
 
